@@ -4,7 +4,7 @@ export const AuthMenuStyled = styled.div`
   display: flex;
   gap: 10px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     display: none;
   }
 `;
@@ -16,7 +16,7 @@ export const BurgerButton = styled.button`
 
   cursor: pointer;
 
-  @media screen and (max-width: 767.9px) {
+  @media screen and (max-width: 1023.9px) {
     display: block;
   }
 `;
