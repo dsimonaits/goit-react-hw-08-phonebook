@@ -16,7 +16,7 @@ export const BurgerButton = styled.button`
 
   cursor: pointer;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767.9px) {
     display: block;
   }
 `;
