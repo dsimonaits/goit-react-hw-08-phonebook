@@ -1,14 +1,20 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import { logout } from 'redux/auth/auth-operations';
-import { selectUser } from 'redux/auth/auth-selectors';
-import { AuthMenuStyled, BurgerButton } from './AuthMenu.styled';
+import { selectEmail } from 'redux/auth/auth-selectors';
+import ButtonMui from 'components/ButtonMui/ButtonMui';
+import {
+  AuthMenuStyled,
+  BurgerButton,
+  AuthContentStyled,
+} from './AuthMenu.styled';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import ModalWindow from 'components/Modal/Modal';
+
 export const AuthMenu = () => {
   const [showModal, setShowModal] = useState(false);
 
-  const user = useSelector(selectUser);
+  const userEmail = useSelector(selectEmail);
   const dispatch = useDispatch();
 
   const openModal = () => {
@@ -21,10 +27,10 @@ export const AuthMenu = () => {
 
   const AuthContent = () => {
     return (
-      <>
-        <p>{`Welcome, ${user}!`}</p>
-        <button onClick={() => dispatch(logout())}>LogOut</button>
-      </>
+      <AuthContentStyled>
+        <p>{`${userEmail}!`}</p>
+        <ButtonMui onClick={() => dispatch(logout())}>Logout</ButtonMui>
+      </AuthContentStyled>
     );
   };
 
