@@ -65,7 +65,7 @@ export const refreshUser = createAsyncThunk(
       return data;
     } catch (error) {
       console.log(error);
-      return rejectWithValue(error);
+      return rejectWithValue(error.message);
     }
   }
 );
