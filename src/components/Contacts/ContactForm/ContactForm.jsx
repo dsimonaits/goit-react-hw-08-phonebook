@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
 import { selectContacts } from 'redux/contacts/selectors';
-import { Button } from 'components/Btn/Button';
+// import { Button } from 'components/Btn/Button';
+import ButtonMui from 'components/ButtonMui/ButtonMui';
 import { Form } from './ContactForm.styled';
 import { Label } from './ContactForm.styled';
 import { Input } from './ContactForm.styled';
@@ -64,7 +65,7 @@ const ContactForm = () => {
           autoComplete="off"
         />
       </Label>
-      <Button text="Add contact" />
+      <ButtonMui>Add Contact</ButtonMui>
     </Form>
   );
 };
