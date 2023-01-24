@@ -2,7 +2,6 @@ import { Backdrop, Modal, BtnClose } from './Modal.styled';
 import { AiOutlineClose } from 'react-icons/ai';
 
 const ModalWindow = ({ children, onClick }) => {
-  console.log(onClick);
   return (
     <>
       <Backdrop className="backdrop" onClick={onClick}>
