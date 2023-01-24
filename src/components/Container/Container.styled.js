@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const ContainerStyled = styled.div`
   padding-left: 10px;
   padding-right: 10px;
+  box-sizing: border-box;
 
   &.hero {
     display: flex;
