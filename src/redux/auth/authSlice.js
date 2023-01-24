@@ -32,6 +32,15 @@ const authSlice = createSlice({
         state.userRefresh = false;
         state.userRefreshCompleted = true;
       })
+      .addCase(refreshUser.pending, state => {
+        state.userRefresh = true;
+        state.userRefreshCompleted = false;
+      })
+      .addCase(refreshUser.rejected, state => {
+        state.userRefresh = false;
+        state.userRefreshCompleted = true;
+        state.user = { name: '', email: '' };
+      })
       .addMatcher(
         isAnyOf(
           register.pending,
@@ -41,20 +50,13 @@ const authSlice = createSlice({
         ),
         state => {
           state.isLoading = true;
-          state.userRefresh = true;
         }
       )
       .addMatcher(
-        isAnyOf(
-          register.fulfilled,
-          login.fulfilled,
-          logout.fulfilled,
-          refreshUser.fulfilled
-        ),
+        isAnyOf(register.fulfilled, login.fulfilled, logout.fulfilled),
         state => {
           state.isLoading = false;
           state.error = null;
-          state.userRefresh = false;
         }
       )
       .addMatcher(
@@ -67,8 +69,6 @@ const authSlice = createSlice({
         (state, { payload }) => {
           state.isLoading = false;
           state.error = payload;
-          state.userRefresh = false;
-          state.userRefreshCompleted = true;
         }
       ),
 });
