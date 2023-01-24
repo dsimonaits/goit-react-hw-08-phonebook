@@ -2,13 +2,17 @@ import styled from 'styled-components';
 
 export const AuthMenuStyled = styled.div`
   display: none;
-  /* display: flex;
-  gap: 10px; */
 
   @media screen and (min-width: 767.9px) {
     display: flex;
-    gap: 10px;
+    gap: 20px;
   }
+`;
+
+export const AuthContentStyled = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
 `;
 
 export const BurgerButton = styled.button`
