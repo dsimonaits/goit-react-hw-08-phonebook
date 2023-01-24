@@ -22,7 +22,7 @@ export const register = createAsyncThunk(
       console.log(data);
       return data;
     } catch (error) {
-      return rejectWithValue(error);
+      return rejectWithValue(error.message);
     }
   }
 );
@@ -35,7 +35,7 @@ export const login = createAsyncThunk(
       console.log(data);
       return data;
     } catch (error) {
-      return rejectWithValue(error);
+      return rejectWithValue(error.message);
     }
   }
 );
@@ -47,7 +47,7 @@ export const logout = createAsyncThunk(
       await axios.post('/users/logout');
       token.unset();
     } catch (error) {
-      return rejectWithValue(error);
+      return rejectWithValue(error.message);
     }
   }
 );
