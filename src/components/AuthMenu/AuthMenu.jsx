@@ -28,7 +28,7 @@ export const AuthMenu = () => {
   const AuthContent = () => {
     return (
       <AuthContentStyled>
-        <p>{`${userEmail}!`}</p>
+        <p>{`${userEmail}`}</p>
         <ButtonMui onClick={() => dispatch(logout())}>Logout</ButtonMui>
       </AuthContentStyled>
     );
