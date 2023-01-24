@@ -9,12 +9,19 @@ export const Backdrop = styled.div`
   left: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
 `;
 
 export const Modal = styled.div`
-  width: 80vw;
-  height: auto;
+  top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  width: auto;
+  height: 100px;
   position: relative;
   padding: 10px;
   background-color: #ffffff;
