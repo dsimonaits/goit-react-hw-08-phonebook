@@ -1,4 +1,4 @@
-import { Button } from 'components/Btn/Button';
+import ButtonMui from 'components/ButtonMui/ButtonMui';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
@@ -24,11 +24,9 @@ const Contact = ({ name, number, id }) => {
         Number:
         <br /> <B>{number}</B>
       </p>
-      <Button
-        disabled={btnState}
-        clickHandler={() => handleDelete(id)}
-        text={!btnState ? 'Delete' : 'Deleting...'}
-      />
+      <ButtonMui disabled={btnState} onClick={() => handleDelete(id)}>
+        {!btnState ? 'Delete' : 'Deleting...'}
+      </ButtonMui>
     </ContactWrapper>
   );
 };
