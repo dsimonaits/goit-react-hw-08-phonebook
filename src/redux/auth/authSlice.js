@@ -40,6 +40,7 @@ const authSlice = createSlice({
         state.userRefresh = false;
         state.userRefreshCompleted = true;
         state.user = { name: '', email: '' };
+        state.token = null;
       })
       .addMatcher(
         isAnyOf(
