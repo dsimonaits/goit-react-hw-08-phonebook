@@ -8,6 +8,6 @@ export const AuthNavstyled = styled.ul`
 
 export const NavLinkStyled = styled(NavLink)`
   &.active {
-    color: red;
+    color: #1976d2;
   }
 `;
