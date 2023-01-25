@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import { selectUserRefresh } from 'redux/auth/auth-selectors';
 import { selectUserRefreshCompleted } from 'redux/auth/auth-selectors';
 import { refreshUser } from 'redux/auth/auth-operations';
 import { HomePage } from 'pages/HomePage';
