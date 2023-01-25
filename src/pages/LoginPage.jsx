@@ -4,7 +4,6 @@ import SignIn from 'components/LoginFormMui/LoginFormMui';
 export const LoginPage = () => {
   return (
     <>
-      {/* <LoginForm /> */}
       <SignIn />
     </>
   );
