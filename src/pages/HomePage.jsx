@@ -12,6 +12,7 @@ import {
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import { selectContacts } from 'redux/contacts/selectors';
+import { register } from 'redux/auth/auth-operations';
 export const HomePage = () => {
   const token = useSelector(selectToken);
   const user = useSelector(selectUser);
@@ -26,9 +27,21 @@ export const HomePage = () => {
   }, [dispatch, token]);
 
   const navigate = useNavigate();
+
   const handleClickNavigate = e => {
     console.log(e.target.name);
-    navigate('/login');
+
+    switch (e.target.name) {
+      case 'register':
+        navigate('/register');
+        break;
+      case 'login':
+        navigate('/login');
+        break;
+
+      default:
+        break;
+    }
   };
   return token && refreshCompleted ? (
     <Section>
@@ -43,7 +56,6 @@ export const HomePage = () => {
     <Section>
       <Container className="hero">
         <h1>Welcome to 'My PhoneBook App'</h1>
-
         <Grid
           container
           direction="row"
@@ -52,27 +64,26 @@ export const HomePage = () => {
         >
           {
             <Grid item>
-              <Link
-                component="button"
-                onClick={handleClickNavigate}
-                variant="body2"
-                name="register"
-              >
-                {'Register'}
-              </Link>
-            </Grid>
-          }{' '}
-          /
-          {
-            <Grid item>
-              <Link
-                component="button"
-                onClick={handleClickNavigate}
-                variant="body2"
-                name="login"
-              >
-                {'Log In'}
-              </Link>
+              <p>
+                Please{' '}
+                <Link
+                  component="button"
+                  onClick={handleClickNavigate}
+                  variant="body2"
+                  name="register"
+                >
+                  {'Register'}
+                </Link>{' '}
+                or{' '}
+                <Link
+                  component="button"
+                  onClick={handleClickNavigate}
+                  variant="body2"
+                  name="login"
+                >
+                  {'Log In'}
+                </Link>
+              </p>
             </Grid>
           }
         </Grid>
