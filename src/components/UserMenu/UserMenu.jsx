@@ -21,8 +21,10 @@ export const AuthMenu = () => {
     setShowModal(true);
   };
 
-  const closeModal = () => {
-    setShowModal(false);
+  const closeModal = e => {
+    if (e.currentTarget === e.target) {
+      setShowModal(false);
+    }
   };
 
   const AuthContent = () => {
