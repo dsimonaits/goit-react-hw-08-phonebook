@@ -8,9 +8,9 @@ export const Navigation = () => {
   const token = useSelector(selectToken);
   return (
     <MainNav>
-      <span>
+      <a href="/">
         <b>PhoneBook</b>
-      </span>
+      </a>
       <nav>
         <SiteNav>
           <li>
