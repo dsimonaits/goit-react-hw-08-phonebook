@@ -1,4 +1,5 @@
 import ButtonMui from 'components/ButtonMui/ButtonMui';
+import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
@@ -14,6 +15,8 @@ const Contact = ({ name, number, id }) => {
   const [btnState, setBtnState] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
+  useEffect(() => {}, [showModal]);
+
   const handleDelete = id => {
     dispatch(deleteContact(id));
     setBtnState(true);
@@ -28,17 +31,17 @@ const Contact = ({ name, number, id }) => {
     setBtnState(true);
     const name = contactName;
     const number = contactNumber;
-    const contact = { name, number, id };
+    const contact = { id, name, number };
     console.log(contact);
     dispatch(updateContact(contact));
     resetForm();
     setBtnState(false);
-    closeModal();
+    setShowModal(false);
   };
 
   const resetForm = () => {
-    setContactName('');
-    setContactNumber('');
+    setContactName(contactName);
+    setContactNumber(contactNumber);
   };
 
   const openModal = () => {
