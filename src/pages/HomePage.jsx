@@ -12,7 +12,6 @@ import {
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import { selectContacts } from 'redux/contacts/selectors';
-import { register } from 'redux/auth/auth-operations';
 export const HomePage = () => {
   const token = useSelector(selectToken);
   const user = useSelector(selectUser);
