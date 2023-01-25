@@ -1,4 +1,4 @@
-import { AuthMenu } from 'components/AuthMenu/AuthMenu';
+import { AuthMenu } from 'components/UserMenu/UserMenu';
 import { AuthNav } from 'components/AuthNav/AuthNav';
 import { useSelector } from 'react-redux';
 import { selectToken } from 'redux/auth/auth-selectors';
