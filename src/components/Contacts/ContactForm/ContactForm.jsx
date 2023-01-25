@@ -2,11 +2,9 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
 import { selectContacts } from 'redux/contacts/selectors';
-// import { Button } from 'components/Btn/Button';
+import { ToastContainer, toast } from 'react-toastify';
 import ButtonMui from 'components/ButtonMui/ButtonMui';
-import { Form } from './ContactForm.styled';
-import { Label } from './ContactForm.styled';
-import { Input } from './ContactForm.styled';
+import { Form, Label, Input } from './ContactForm.styled';
 
 const ContactForm = () => {
   const [name, setName] = useState('');
@@ -16,8 +14,8 @@ const ContactForm = () => {
   const contacts = useSelector(selectContacts);
 
   const handleAdd = contact => {
-    contacts.find(({ name }) => name === contact.name)
-      ? alert(`${contact.name} is already in contacts`)
+    contacts.find(({ number }) => number === contact.number)
+      ? toast(`You already have contact with this number:  ${number}`)
       : dispatch(addContact(contact));
   };
 
@@ -38,35 +36,38 @@ const ContactForm = () => {
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
-      <Label>
-        Name
-        <Input
-          value={name}
-          onChange={handleChange}
-          type="text"
-          name="name"
-          pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-          title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-          required
-          autoComplete="off"
-        />
-      </Label>
-      <Label>
-        Number
-        <Input
-          value={number}
-          onChange={handleChange}
-          type="tel"
-          name="number"
-          pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-          title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-          required
-          autoComplete="off"
-        />
-      </Label>
-      <ButtonMui>Add Contact</ButtonMui>
-    </Form>
+    <>
+      <Form onSubmit={handleSubmit}>
+        <Label>
+          Name
+          <Input
+            value={name}
+            onChange={handleChange}
+            type="text"
+            name="name"
+            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+            required
+            autoComplete="off"
+          />
+        </Label>
+        <Label>
+          Number
+          <Input
+            value={number}
+            onChange={handleChange}
+            type="tel"
+            name="number"
+            pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+            title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+            required
+            autoComplete="off"
+          />
+        </Label>
+        <ButtonMui>Add Contact</ButtonMui>
+      </Form>
+      <ToastContainer />
+    </>
   );
 };
 // }
