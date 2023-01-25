@@ -6,7 +6,6 @@ const initialState = {
   token: null,
   isLoading: false,
   error: null,
-  userRefresh: false,
   userRefreshCompleted: false,
 };
 
@@ -29,18 +28,16 @@ const authSlice = createSlice({
       })
       .addCase(refreshUser.fulfilled, (state, { payload }) => {
         state.user = payload;
-        state.userRefresh = false;
         state.userRefreshCompleted = true;
       })
       .addCase(refreshUser.pending, state => {
-        state.userRefresh = true;
         state.userRefreshCompleted = false;
       })
-      .addCase(refreshUser.rejected, state => {
-        state.userRefresh = false;
+      .addCase(refreshUser.rejected, (state, { payload }) => {
         state.userRefreshCompleted = true;
         state.user = { name: '', email: '' };
         state.token = null;
+        state.error = payload;
       })
       .addMatcher(
         isAnyOf(
