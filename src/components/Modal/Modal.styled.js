@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 export const Backdrop = styled.div`
-  z-index: 999;
+  position: relative;
   position: fixed;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   background-color: #00000023;
   top: 0;
   left: 0;
@@ -15,15 +15,14 @@ export const Backdrop = styled.div`
 export const Modal = styled.div`
   top: 40px;
   min-width: 150px;
+  min-height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 10px;
   border-radius: 10px;
-  width: auto;
-  height: 100px;
-  position: relative;
+  position: absolute;
   padding: 10px;
   background-color: #ffffff;
 `;
