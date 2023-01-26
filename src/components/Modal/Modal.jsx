@@ -7,7 +7,7 @@ const ModalWindow = ({ children, onClick }) => {
       <Backdrop className="backdrop" onClick={onClick}>
         <Modal className="modal">
           <BtnClose className="modal_close" onClick={onClick}>
-            <AiOutlineClose />
+            <AiOutlineClose onClick={onClick} />
           </BtnClose>
           {children}
         </Modal>
