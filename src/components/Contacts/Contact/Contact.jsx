@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import { updateContact, deleteContact } from 'redux/contacts/operations';
 import { ContactWrapper, B } from './Contact.styled';
 import ModalWindow from 'components/Modal/Modal';
-import { Form, Label, Input } from './Contact.styled';
+import { Form, Label, Input, ButtonWrapper } from './Contact.styled';
 
 const Contact = ({ name, number, id }) => {
   const [contactName, setContactName] = useState(name);
@@ -32,7 +32,6 @@ const Contact = ({ name, number, id }) => {
     const name = contactName;
     const number = contactNumber;
     const contact = { id, name, number };
-    console.log(contact);
     dispatch(updateContact(contact));
     resetForm();
     setBtnState(false);
@@ -99,12 +98,14 @@ const Contact = ({ name, number, id }) => {
           Number:
           <br /> <B>{number}</B>
         </p>
-        <ButtonMui disabled={btnState} onClick={() => handleDelete(id)}>
-          {!btnState ? 'Delete' : 'Deleting...'}
-        </ButtonMui>
-        <ButtonMui disabled={btnState} onClick={() => openModal()}>
-          {!btnState ? 'Edit' : 'Editing...'}
-        </ButtonMui>
+        <ButtonWrapper>
+          <ButtonMui disabled={btnState} onClick={() => handleDelete(id)}>
+            {!btnState ? 'Delete' : 'Deleting...'}
+          </ButtonMui>
+          <ButtonMui disabled={btnState} onClick={() => openModal()}>
+            {!btnState ? 'Edit' : 'Editing...'}
+          </ButtonMui>
+        </ButtonWrapper>
       </ContactWrapper>
       {showModal && (
         <ModalWindow onClick={closeModal}>{AuthContent()}</ModalWindow>
