@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Backdrop = styled.div`
-  z-index: 97;
+  z-index: 101;
   position: relative;
   position: fixed;
   width: 100vw;
@@ -14,7 +14,7 @@ export const Backdrop = styled.div`
 `;
 
 export const Modal = styled.div`
-  z-index: 98;
+  z-index: 102;
   top: 25%;
   min-width: 150px;
   min-height: 100px;
