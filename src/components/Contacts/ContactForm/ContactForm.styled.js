@@ -1,10 +1,13 @@
 import styled from 'styled-components';
 
 export const Form = styled.form`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  justify-content: center;
+  margin: auto;
+  grid-template-columns: repeat(2, 1fr);
+  width: 280px;
   gap: 10px;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
 
   color: #373434a6;
