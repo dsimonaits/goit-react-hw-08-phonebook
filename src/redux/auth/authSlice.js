@@ -48,6 +48,7 @@ const authSlice = createSlice({
         ),
         state => {
           state.isLoading = true;
+          state.error = false;
         }
       )
       .addMatcher(
