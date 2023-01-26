@@ -25,10 +25,14 @@ export const AuthNav = () => {
     return (
       <ModalAuthContent>
         <li>
-          <NavLinkStyled to="register">Register</NavLinkStyled>
+          <NavLinkStyled to="register" on onClick={closeModal}>
+            Register
+          </NavLinkStyled>
         </li>
         <li>
-          <NavLinkStyled to="login">Log In</NavLinkStyled>
+          <NavLinkStyled to="login" onClick={closeModal}>
+            Log In
+          </NavLinkStyled>
         </li>
       </ModalAuthContent>
     );
