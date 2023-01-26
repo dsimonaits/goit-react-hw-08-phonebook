@@ -18,12 +18,10 @@ export const HomePage = () => {
   const contacts = useSelector(selectContacts);
   const refreshCompleted = useSelector(selectUserRefreshCompleted);
   const dispatch = useDispatch();
+
   useEffect(() => {
-    if (!token) {
-      return;
-    }
     dispatch(fetchContacts());
-  }, [dispatch, token]);
+  }, [dispatch]);
 
   const navigate = useNavigate();
 
