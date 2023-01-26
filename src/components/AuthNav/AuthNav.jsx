@@ -25,7 +25,7 @@ export const AuthNav = () => {
     return (
       <ModalAuthContent>
         <li>
-          <NavLinkStyled to="register" on onClick={closeModal}>
+          <NavLinkStyled to="register" onClick={closeModal}>
             Register
           </NavLinkStyled>
         </li>
