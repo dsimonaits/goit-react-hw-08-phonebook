@@ -15,7 +15,7 @@ export const Backdrop = styled.div`
 
 export const Modal = styled.div`
   z-index: 98;
-  top: 40px;
+  top: 25%;
   min-width: 150px;
   min-height: 100px;
   display: flex;
