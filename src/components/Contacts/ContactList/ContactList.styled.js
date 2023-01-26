@@ -10,6 +10,10 @@ export const List = styled.ul`
 
   @media screen and (min-width: 768px) {
     max-height: 500px;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
   }
 
   @media screen and (min-width: 1200px) {
@@ -21,8 +25,6 @@ export const ListItem = styled.li`
   max-width: 320px;
   padding: 5px;
   height: auto;
-  padding-left: 10px;
-  padding-right: 10px;
   border: 1px solid black;
   border-radius: 5px;
   display: flex;
@@ -32,6 +34,8 @@ export const ListItem = styled.li`
   /* background-color: black; */
 
   &:not(:last-child) {
-    margin-bottom: 5px;
+    @media screen and (max-width: 768px) {
+      margin-bottom: 5px;
+    }
   }
 `;
