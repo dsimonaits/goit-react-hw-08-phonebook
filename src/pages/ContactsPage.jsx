@@ -11,9 +11,6 @@ export const Contacts = () => {
   const refreshingComplete = useSelector(selectUserRefreshCompleted);
 
   useEffect(() => {
-    if (!refreshingComplete) {
-      return;
-    }
     dispatch(fetchContacts());
   }, [dispatch, refreshingComplete]);
 
