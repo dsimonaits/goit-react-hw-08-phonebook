@@ -48,3 +48,8 @@ export const Label = styled.label`
 export const Input = styled.input`
   width: 120px;
 `;
+
+export const ButtonWrapper = styled.div`
+  display: flex;
+  gap: 10px;
+`;
