@@ -12,7 +12,6 @@ import { selectAuthError } from 'redux/auth/auth-selectors';
 export const Layout = () => {
   // const contactsError = useSelector(selectContactsError);
   const authError = useSelector(selectAuthError);
-  console.log(authError);
 
   useEffect(() => {
     switch (authError) {
