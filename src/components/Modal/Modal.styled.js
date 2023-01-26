@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Backdrop = styled.div`
+  z-index: 97;
   position: relative;
   position: fixed;
   width: 100vw;
@@ -13,9 +14,10 @@ export const Backdrop = styled.div`
 `;
 
 export const Modal = styled.div`
+  z-index: 98;
   top: 40px;
   min-width: 150px;
-  min-height: auto;
+  min-height: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,6 +30,8 @@ export const Modal = styled.div`
 `;
 
 export const BtnClose = styled.button`
+  padding: 5px;
+  z-index: 99;
   border: none;
   background-color: transparent;
   position: absolute;
