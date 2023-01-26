@@ -4,6 +4,7 @@ import { selectUserRefreshCompleted } from 'redux/auth/auth-selectors';
 import { fetchContacts } from 'redux/contacts/operations';
 import 'react-toastify/dist/ReactToastify.css';
 import Section from 'components/Section/Section';
+import Container from 'components/Container/Container';
 import { ContactsWrapper } from 'components/Contacts/ContactsWrapper/ContactsWrapper';
 
 export const Contacts = () => {
