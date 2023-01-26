@@ -55,7 +55,7 @@ export default function Register() {
     <Container component="main" maxWidth="xs">
       <Box
         sx={{
-          marginTop: 8,
+          marginTop: 0,
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
