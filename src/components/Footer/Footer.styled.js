@@ -2,8 +2,6 @@ import styled from 'styled-components';
 import Container from 'components/Container/Container';
 
 export const FooterStyled = styled.footer`
-  /* position: absolute; */
-  bottom: 20px;
   width: auto;
   height: auto;
 `;
