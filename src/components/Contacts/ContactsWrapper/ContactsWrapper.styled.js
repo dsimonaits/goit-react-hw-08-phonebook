@@ -7,7 +7,6 @@ export const Wrapper = styled(Container)`
   min-height: 350px;
   display: flex;
   justify-content: center;
-  gap: 5px;
 `;
 
 export const LeftBar = styled.div``;
