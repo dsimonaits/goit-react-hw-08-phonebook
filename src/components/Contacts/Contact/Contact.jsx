@@ -6,7 +6,13 @@ import { useDispatch } from 'react-redux';
 import { updateContact, deleteContact } from 'redux/contacts/operations';
 import { ContactWrapper, B } from './Contact.styled';
 import ModalWindow from 'components/Modal/Modal';
-import { Form, Label, Input, ButtonWrapper } from './Contact.styled';
+import {
+  Form,
+  Label,
+  Input,
+  ButtonWrapper,
+  DataWrapper,
+} from './Contact.styled';
 
 const Contact = ({ name, number, id }) => {
   const [contactName, setContactName] = useState(name);
@@ -87,17 +93,25 @@ const Contact = ({ name, number, id }) => {
     );
   };
 
+  const avatar = `https://robohash.org/${name}.png?set=set5`;
   return (
     <>
       <ContactWrapper>
-        <p>
-          Name:
-          <br /> <B>{name}</B>
-        </p>
-        <p>
-          Number:
-          <br /> <B>{number}</B>
-        </p>
+        <DataWrapper>
+          <div>
+            {' '}
+            <p>
+              Name:
+              <br /> <B>{name}</B>
+            </p>
+            <p>
+              Number:
+              <br /> <B>{number}</B>
+            </p>
+          </div>
+          <img alt="robot" src={avatar} width="100px"></img>
+        </DataWrapper>
+
         <ButtonWrapper>
           <ButtonMui disabled={btnState} onClick={() => handleDelete(id)}>
             {!btnState ? 'Delete' : 'Deleting...'}
