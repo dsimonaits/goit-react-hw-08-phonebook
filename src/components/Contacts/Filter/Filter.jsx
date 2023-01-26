@@ -1,4 +1,3 @@
-import Container from 'components/Container/Container';
 import { useDispatch, useSelector } from 'react-redux';
 import { filterValue } from 'redux/contacts/filterSlice';
 import {
@@ -18,15 +17,14 @@ const FilterByName = () => {
     dispatch(filterValue(value));
   };
   return contacts.length === 0 ? (
-    <Container>
-      <h3>
-        {isLoading
-          ? 'Loading...'
-          : 'Sorry your contact list is empty. Add someone.'}
-      </h3>
-    </Container>
+    <h3>
+      {isLoading
+        ? 'Loading...'
+        : 'Sorry your contact list is empty. Add someone.'}
+    </h3>
   ) : (
-    <Container>
+    <div>
+      {' '}
       <Label>
         Find contacts by name
         <input
@@ -38,7 +36,7 @@ const FilterByName = () => {
           autoComplete="off"
         />
       </Label>
-    </Container>
+    </div>
   );
 };
 
