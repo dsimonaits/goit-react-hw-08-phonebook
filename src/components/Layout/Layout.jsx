@@ -10,11 +10,11 @@ import { ToastContainer, toast } from 'react-toastify';
 import { selectAuthError } from 'redux/auth/auth-selectors';
 import { ThemeProvider } from 'styled-components';
 import VendorPrefixesMuiTheme from 'components/WebVendorPrefixes/WebVendorPrefixes';
+import { Spinner } from '@chakra-ui/react';
 
 export const Layout = () => {
   const authError = useSelector(selectAuthError);
   const location = useLocation();
-  console.log(location);
 
   useEffect(() => {
     switch (authError) {
@@ -45,7 +45,7 @@ export const Layout = () => {
         <Navigation />
       </Header>
       <main>
-        <Suspense fallback={<p>Loading...</p>}>
+        <Suspense fallback={<Spinner />}>
           <Outlet />
         </Suspense>
       </main>
