@@ -11,10 +11,13 @@ export const HomePage = () => {
   const user = useSelector(selectUser);
   const refreshCompleted = useSelector(selectUserRefreshCompleted);
 
+  const avatar = `https://robohash.org/${user}.png?set=set5`;
+
   return token && refreshCompleted ? (
     <Section>
       <Container className="hero">
         <h1>'Welcome, {user}'</h1>
+        <img alt="robot" src={avatar} width="100px"></img>
       </Container>
     </Section>
   ) : (
