@@ -5,9 +5,10 @@ import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Header } from './Layout.styled';
 import Footer from 'components/Footer/Footer';
-import { PageContainer } from './Layout.styled';
 import { ToastContainer, toast } from 'react-toastify';
 import { selectAuthError } from 'redux/auth/auth-selectors';
+import { ThemeProvider } from 'styled-components';
+import VendorPrefixesMuiTheme from 'components/WebVendorPrefixes/WebVendorPrefixes';
 
 export const Layout = () => {
   // const contactsError = useSelector(selectContactsError);
@@ -29,19 +30,17 @@ export const Layout = () => {
   }, [authError]);
 
   return (
-    <>
-      <PageContainer>
-        <Header>
-          <Navigation />
-        </Header>
-        <main>
-          <Suspense fallback={<p>Loading...</p>}>
-            <Outlet />
-          </Suspense>
-        </main>
-        <Footer />
-      </PageContainer>
+    <ThemeProvider theme={VendorPrefixesMuiTheme}>
+      <Header>
+        <Navigation />
+      </Header>
+      <main>
+        <Suspense fallback={<p>Loading...</p>}>
+          <Outlet />
+        </Suspense>
+      </main>
+      <Footer />
       <ToastContainer />
-    </>
+    </ThemeProvider>
   );
 };
