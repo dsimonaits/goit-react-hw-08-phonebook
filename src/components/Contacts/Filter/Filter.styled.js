@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Label = styled.label`
-  /* width: 300px; */
+  padding-top: 10px;
   display: flex;
   flex-flow: column;
   align-items: center;
