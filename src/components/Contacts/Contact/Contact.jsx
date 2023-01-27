@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { updateContact, deleteContact } from 'redux/contacts/operations';
-import { ContactWrapper, B } from './Contact.styled';
+import { ContactWrapper, B, ContactDataWrapper } from './Contact.styled';
 import ModalWindow from 'components/Modal/Modal';
 import {
   Form,
@@ -94,30 +94,33 @@ const Contact = ({ name, number, id }) => {
   };
 
   const avatar = `https://robohash.org/${name}.png?set=set5`;
+  const contactNumberLink = `tel:${number}`;
   return (
     <>
       <ContactWrapper>
         <DataWrapper>
-          <div>
+          <ContactDataWrapper>
             {' '}
             <p>
               Name:
               <br /> <B>{name}</B>
             </p>
-            <p>
-              Number:
-              <br /> <B>{number}</B>
-            </p>
-          </div>
+            <span>
+              <p>Number (click to call):</p>
+              <a href={contactNumberLink}>
+                <b>{number}</b>
+              </a>
+            </span>
+          </ContactDataWrapper>
           <img alt="robot" src={avatar} width="100px"></img>
         </DataWrapper>
 
         <ButtonWrapper>
-          <ButtonMui disabled={btnState} onClick={() => handleDelete(id)}>
-            {!btnState ? 'Delete' : 'Deleting...'}
-          </ButtonMui>
           <ButtonMui disabled={btnState} onClick={() => openModal()}>
             {!btnState ? 'Edit' : 'Editing...'}
+          </ButtonMui>
+          <ButtonMui disabled={btnState} onClick={() => handleDelete(id)}>
+            {!btnState ? 'Delete' : 'Deleting...'}
           </ButtonMui>
         </ButtonWrapper>
       </ContactWrapper>
