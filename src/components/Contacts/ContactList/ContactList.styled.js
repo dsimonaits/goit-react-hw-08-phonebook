@@ -5,8 +5,8 @@ export const List = styled.ul`
   flex-flow: column;
   align-items: center;
   list-style: none;
-  max-height: 400px;
-  overflow-y: auto;
+  /* max-height: 400px;
+  overflow-y: auto; */
 
   @media screen and (min-width: 768px) {
     max-height: 500px;
