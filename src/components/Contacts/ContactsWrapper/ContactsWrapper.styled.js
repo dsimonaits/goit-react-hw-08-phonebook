@@ -4,9 +4,10 @@ import Container from 'components/Container/Container';
 export const Wrapper = styled(Container)`
   padding-top: 10px;
   padding-bottom: 10px;
-  min-height: 350px;
   display: flex;
-  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  flex-flow: column;
 `;
 
 export const LeftBar = styled.div``;
