@@ -56,3 +56,8 @@ export const DataWrapper = styled.div`
   display: flex;
   justify-content: space-between;
 `;
+export const ContactDataWrapper = styled.div`
+  display: flex;
+  flex-flow: column;
+  gap: 5px;
+`;
