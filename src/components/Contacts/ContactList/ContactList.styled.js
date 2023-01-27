@@ -23,6 +23,7 @@ export const List = styled.ul`
 
 export const ListItem = styled.li`
   max-width: 320px;
+  min-height: 150px;
   padding: 5px;
   height: auto;
   border: 1px solid black;
