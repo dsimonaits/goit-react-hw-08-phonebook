@@ -6,6 +6,7 @@ import {
   selectIsLoading,
 } from 'redux/contacts/selectors';
 import { Label } from './Filter.styled';
+import { CircularProgress } from '@chakra-ui/react';
 
 const FilterByName = () => {
   const dispatch = useDispatch();
@@ -18,9 +19,11 @@ const FilterByName = () => {
   };
   return contacts.length === 0 ? (
     <h3>
-      {isLoading
-        ? 'Loading...'
-        : 'Sorry your contact list is empty. Add someone.'}
+      {isLoading ? (
+        <CircularProgress value={30} size="120px" />
+      ) : (
+        'Sorry your contact list is empty. Add someone.'
+      )}
     </h3>
   ) : (
     <div>
