@@ -8,3 +8,7 @@ export const Label = styled.label`
   justify-content: center;
   gap: 5px;
 `;
+
+export const findContacts = styled.div`
+  margin-top: 10px;
+`;
