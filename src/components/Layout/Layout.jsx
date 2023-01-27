@@ -19,18 +19,26 @@ export const Layout = () => {
     switch (authError) {
       case 'Request failed with status code 400':
         if (location.pathname === '/login') {
-          toast('Wrong password or email!');
+          toast.warn('Wrong password or email!', {
+            position: toast.POSITION.TOP_CENTER,
+          });
         }
         if (location.pathname === '/register') {
-          toast('User with this email probably already registered');
+          toast.warn('User with this email probably already registered', {
+            position: toast.POSITION.TOP_CENTER,
+          });
         }
-
         break;
       case 'Network Error':
-        toast('Network Error');
+        toast.warn('Network Error', {
+          position: toast.POSITION.TOP_CENTER,
+        });
         break;
       case 'Please authenticate':
-        toast('Your session has been expired please login again');
+        toast.warn('Your session has been expired please login again', {
+          position: toast.POSITION.TOP_CENTER,
+        });
+
         break;
 
       default:
