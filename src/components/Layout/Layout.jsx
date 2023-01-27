@@ -35,9 +35,11 @@ export const Layout = () => {
         });
         break;
       case 'Please authenticate':
-        toast.warn('Your session has been expired please login again', {
-          position: toast.POSITION.TOP_CENTER,
-        });
+        if (location.pathname === '/login') {
+          toast.warn('Your session has been expired please login again', {
+            position: toast.POSITION.TOP_CENTER,
+          });
+        }
 
         break;
 
