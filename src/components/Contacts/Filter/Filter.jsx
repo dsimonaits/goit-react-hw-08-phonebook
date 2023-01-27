@@ -29,7 +29,7 @@ const FilterByName = () => {
     <div>
       {' '}
       <Label>
-        Find contacts by name
+        Find contact by name or number
         <input
           onChange={setFilterValue}
           type="text"
