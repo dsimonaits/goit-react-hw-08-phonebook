@@ -10,7 +10,6 @@ import { ToastContainer, toast } from 'react-toastify';
 import { selectAuthError } from 'redux/auth/auth-selectors';
 import { ThemeProvider } from 'styled-components';
 import VendorPrefixesMuiTheme from 'components/WebVendorPrefixes/WebVendorPrefixes';
-import { Spinner } from '@chakra-ui/react';
 
 export const Layout = () => {
   const authError = useSelector(selectAuthError);
@@ -45,7 +44,7 @@ export const Layout = () => {
         <Navigation />
       </Header>
       <main>
-        <Suspense fallback={<Spinner />}>
+        <Suspense fallback="">
           <Outlet />
         </Suspense>
       </main>
