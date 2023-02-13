@@ -18,8 +18,12 @@ export const ModalAuthContent = styled.ul`
 `;
 
 export const NavLinkStyled = styled(NavLink)`
+  &:hover,
+  &:focus {
+    color: var(--secondary-color);
+  }
   &.active {
-    color: #1976d2;
+    color: var(--secondary-color);
   }
 `;
 
