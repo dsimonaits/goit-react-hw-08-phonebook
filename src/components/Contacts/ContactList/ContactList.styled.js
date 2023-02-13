@@ -9,15 +9,10 @@ export const List = styled.ul`
   overflow-y: auto; */
 
   @media screen and (min-width: 768px) {
-    max-height: 500px;
     flex-flow: row;
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
-  }
-
-  @media screen and (min-width: 1200px) {
-    max-height: 500px;
   }
 `;
 

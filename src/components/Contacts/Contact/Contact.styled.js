@@ -20,12 +20,11 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 10px;
-  align-items: center;
+  align-items: flex-end;
 
   color: #373434a6;
   background-color: white;
 
-  border: 1px solid black;
   border-radius: 5px;
   padding: 10px;
 

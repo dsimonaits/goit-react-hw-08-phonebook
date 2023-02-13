@@ -6,7 +6,7 @@ export const ContainerStyled = styled.div`
   box-sizing: border-box;
 
   &.hero {
-    height: 70vh;
+    /* height: 70vh; */
     padding-top: 30px;
     display: flex;
     text-align: center;
@@ -16,6 +16,7 @@ export const ContainerStyled = styled.div`
   }
 
   min-height: ${props => props.height};
+
   @media screen and (min-width: 320px) {
     width: 320px;
     margin-right: auto;
