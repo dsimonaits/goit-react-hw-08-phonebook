@@ -6,7 +6,7 @@ export const ContainerStyled = styled.div`
   box-sizing: border-box;
 
   &.hero {
-    /* height: 70vh; */
+    min-height: 70vh;
     padding-top: 30px;
     display: flex;
     text-align: center;

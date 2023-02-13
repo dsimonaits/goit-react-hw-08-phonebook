@@ -1,22 +1,27 @@
 import ContactForm from '../ContactForm';
 import FilterByName from '../Filter/Filter';
 import ContactList from '../ContactList';
-import { LeftBar, RightBar, Wrapper } from './ContactsWrapper.styled';
+import {
+  LeftBar,
+  Wrapper,
+  ContactsListWrapper,
+  FormWrapper,
+} from './ContactsWrapper.styled';
 
 export const ContactsWrapper = () => {
   return (
-    <>
-      <Wrapper>
+    <Wrapper>
+      <FormWrapper>
         <ContactForm />
         <FilterByName />
-      </Wrapper>
+      </FormWrapper>
 
-      <Wrapper>
+      <ContactsListWrapper>
         <LeftBar>
           <ContactList />
         </LeftBar>
-        <RightBar></RightBar>
-      </Wrapper>
-    </>
+        {/* <RightBar></RightBar> */}
+      </ContactsListWrapper>
+    </Wrapper>
   );
 };
