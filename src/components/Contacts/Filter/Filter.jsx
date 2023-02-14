@@ -5,7 +5,7 @@ import {
   selectContacts,
   selectIsLoading,
 } from 'redux/contacts/selectors';
-import { Label } from './Filter.styled';
+import { Label, Input } from './Filter.styled';
 import { CircularProgress } from '@chakra-ui/react';
 
 const FilterByName = () => {
@@ -30,7 +30,7 @@ const FilterByName = () => {
       {' '}
       <Label>
         Find contact by name or number
-        <input
+        <Input
           onChange={setFilterValue}
           type="text"
           value={filter}

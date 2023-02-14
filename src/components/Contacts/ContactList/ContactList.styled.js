@@ -29,9 +29,13 @@ export const ListItem = styled.li`
   color: Black;
   /* background-color: black; */
 
+  box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.36);
+  -webkit-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.36);
+  -moz-box-shadow: 6px 6px 5px 0px rgba(0, 0, 0, 0.36);
+
   &:not(:last-child) {
-    @media screen and (max-width: 768px) {
-      margin-bottom: 5px;
+    @media screen and (max-width: 767px) {
+      margin-bottom: 10px;
     }
   }
 `;

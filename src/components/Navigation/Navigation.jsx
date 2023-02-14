@@ -2,16 +2,15 @@ import { AuthMenu } from 'components/UserMenu/UserMenu';
 import { AuthNav } from 'components/AuthNav/AuthNav';
 import { useSelector } from 'react-redux';
 import { selectToken } from 'redux/auth/auth-selectors';
-import { MainNav, SiteNav, NavLinkStyled } from './Navigation.styled';
+import { MainNav, SiteNav, NavLinkStyled, Logo } from './Navigation.styled';
 
 export const Navigation = () => {
   const token = useSelector(selectToken);
   return (
     <MainNav>
-      <span>
-        {' '}
+      <Logo to="/contacts">
         <b>PhoneBook</b>
-      </span>
+      </Logo>
 
       <nav>
         <SiteNav>

@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const Backdrop = styled.div`
   z-index: 101;
-  position: relative;
   position: fixed;
   width: 100vw;
   height: 100%;
@@ -11,6 +10,32 @@ export const Backdrop = styled.div`
   left: 0;
   display: flex;
   justify-content: center;
+  -webkit-animation: 400ms ease 0s normal forwards 1 fadein;
+  animation: 400ms ease 0s normal forwards 1 fadein;
+
+  @keyframes fadein {
+    0% {
+      opacity: 0;
+    }
+    66% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @-webkit-keyframes fadein {
+    0% {
+      opacity: 0;
+    }
+    66% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 `;
 
 export const Modal = styled.div`
@@ -27,6 +52,9 @@ export const Modal = styled.div`
   position: absolute;
   padding: 10px;
   background-color: #ffffff;
+
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
 `;
 
 export const BtnClose = styled.button`

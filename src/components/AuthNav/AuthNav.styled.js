@@ -20,6 +20,7 @@ export const ModalAuthContent = styled.ul`
 export const NavLinkStyled = styled(NavLink)`
   &:hover,
   &:focus {
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     color: var(--secondary-color);
   }
   &.active {
