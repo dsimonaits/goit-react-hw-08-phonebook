@@ -12,7 +12,7 @@ export const List = styled.ul`
     flex-flow: row;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
   }
 `;
 
