@@ -7,6 +7,7 @@ import {
   AuthMenuStyled,
   BurgerButton,
   AuthContentStyled,
+  User,
 } from './UserMenu.styled';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import ModalWindow from 'components/Modal/Modal';
@@ -30,7 +31,7 @@ export const AuthMenu = () => {
   const AuthContent = () => {
     return (
       <AuthContentStyled>
-        <p>{`${userEmail}`}</p>
+        <User>{`${userEmail}`}</User>
         <ButtonMui onClick={() => dispatch(logout())}>Logout</ButtonMui>
       </AuthContentStyled>
     );
